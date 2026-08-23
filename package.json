@@ -1,0 +1,9 @@
+{
+  "name": "quadcade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QUADCADE campus gaming hub",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

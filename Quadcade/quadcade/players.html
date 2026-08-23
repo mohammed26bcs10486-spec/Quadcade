@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="QUADCADE — see who's online and looking to play on your campus wifi right now." />
+    <title>Players — QUADCADE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="index.html#lobby"><span class="brand-dot"></span>QUADCADE</a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="players.html" data-page="players.html">Players</a>
+          <a href="rooms.html" data-page="rooms.html">Rooms</a>
+          <a href="clubs.html" data-page="clubs.html">Clubs</a>
+          <a href="games.html" data-page="games.html">Games</a>
+          <a href="store.html" data-page="store.html">Store</a>
+          <a href="index.html#lobby">Lobby</a>
+        </nav>
+        <div class="site-search-wrap">
+          <label class="search-pixel">
+            <span>&gt;</span>
+            <input id="site-search" type="search" placeholder="search players or sections..." autocomplete="off" />
+          </label>
+          <div class="site-search-results" id="site-search-results"></div>
+        </div>
+        <div class="nav-right">
+          <div class="net-status"><span class="net-dot"></span><span>HOSTEL&#8209;C&#8209;5G</span></div>
+          <button class="icon-btn" id="bgm-toggle" type="button" aria-label="Play background music">&#9835;&#824;</button>
+          <a class="profile-chip" href="profile.html"><span class="pixel-avatar">YOU</span><span>My Profile</span></a>
+        </div>
+      </header>
+
+      <main>
+        <p class="breadcrumb"><a href="index.html#lobby">Home</a> / Players</p>
+        <section class="page-hero">
+          <p class="eyebrow pink">LIVE ON YOUR NETWORK</p>
+          <h1>WHO'S <span class="gold">ONLINE</span> NEAR YOU</h1>
+          <p>Everyone below shares your campus wifi right now. Filter by game, search by name or hostel block, then send an invite.</p>
+        </section>
+
+        <section class="filter-row">
+          <p class="section-label">FILTER BY GAME</p>
+          <div class="chip-row" id="game-chips">
+            <button class="chip active" data-game="ALL" type="button">All games</button>
+            <button class="chip" data-game="BGMI" type="button">BGMI</button>
+            <button class="chip" data-game="VALORANT" type="button">Valorant</button>
+            <button class="chip" data-game="FIFA" type="button">FIFA</button>
+            <button class="chip" data-game="CS2" type="button">CS2</button>
+            <button class="chip" data-game="FREE FIRE" type="button">Free Fire</button>
+            <button class="chip" data-game="LUDO KING" type="button">Ludo King</button>
+          </div>
+          <label class="search-pixel">
+            <span>&gt;</span>
+            <input id="global-search" type="search" placeholder="search a name, hostel block, or game" />
+          </label>
+          <p class="my-status-note" id="my-status-note"></p>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2>PLAYER DIRECTORY</h2>
+            <span class="count" id="player-count"></span>
+          </div>
+          <div class="player-grid" id="player-list"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer-title">GAME OVER? <span class="gold">INSERT COIN TO CONTINUE.</span></p>
+        <p class="footer-sub">QUADCADE runs entirely over your hostel/college network. No off-campus strangers, just the people already around you.</p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="storage.js"></script>
+    <script src="data.js"></script>
+    <script src="audio.js"></script>
+    <script src="common.js"></script>
+    <script src="players.js"></script>
+  </body>
+</html>

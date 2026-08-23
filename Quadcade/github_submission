@@ -1,0 +1,9 @@
+QUADCADE
+
+A browser-based campus gaming hub for discovering nearby players, creating rooms, joining clubs, playing arcade games, earning coins, and customizing profiles.
+
+Run locally with:
+
+npm start
+
+Then open http://localhost:3000/

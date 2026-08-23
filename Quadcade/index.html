@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QUADCADE — find people on your college wifi who play what you play. Temporary rooms, permanent clubs, one campus network."
+    />
+    <title>QUADCADE — Your Campus. Your Squad.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen">
+      <div class="boot-box">
+        <p class="boot-logo">QUADCADE</p>
+        <p class="boot-line" id="boot-line-1">&gt; SCANNING FOR CAMPUS WIFI<span class="cursor">_</span></p>
+        <p class="boot-line" id="boot-line-2" hidden>&gt; NETWORK FOUND: HOSTEL&#8209;C&#8209;5G<span class="cursor">_</span></p>
+        <p class="boot-line" id="boot-line-3" hidden>&gt; 128 PLAYERS DETECTED NEARBY<span class="cursor">_</span></p>
+        <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+        <button id="boot-skip" type="button">PRESS START</button>
+      </div>
+    </div>
+
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="index.html#lobby">
+          <span class="brand-dot"></span>
+          QUADCADE
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="players.html" data-page="players.html">Players</a>
+          <a href="rooms.html" data-page="rooms.html">Rooms</a>
+          <a href="clubs.html" data-page="clubs.html">Clubs</a>
+          <a href="games.html" data-page="games.html">Games</a>
+          <a href="store.html" data-page="store.html">Store</a>
+          <a href="index.html#lobby">Lobby</a>
+        </nav>
+        <div class="site-search-wrap">
+          <label class="search-pixel">
+            <span>&gt;</span>
+            <input id="site-search" type="search" placeholder="search players or sections..." autocomplete="off" />
+          </label>
+          <div class="site-search-results" id="site-search-results"></div>
+        </div>
+        <div class="nav-right">
+          <div class="net-status">
+            <span class="net-dot"></span>
+            <span>HOSTEL&#8209;C&#8209;5G</span>
+          </div>
+          <button class="icon-btn" id="bgm-toggle" type="button" aria-label="Play background music">&#9835;&#824;</button>
+          <a class="profile-chip" href="profile.html">
+            <span class="pixel-avatar">YOU</span><span>My Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <main id="top">
+        <!-- HERO -->
+        <section class="hero">
+          <p class="eyebrow pink">P1 CONNECTED &mdash; INSERT COIN TO CONTINUE</p>
+          <h1>YOUR CAMPUS.<br /><span class="gold">YOUR SQUAD.</span></h1>
+          <p class="hero-copy">
+            Roommate's asleep. The courts are empty past ten. So you queue up solo, again &mdash;
+            with strangers three time zones away. QUADCADE finds the people already on your
+            hostel wifi who play what you play, so multiplayer can actually mean playing
+            with someone down the hall.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-pixel gold" href="rooms.html">+ CREATE A ROOM</a>
+            <a class="btn-pixel outline" href="players.html">FIND PLAYERS</a>
+          </div>
+        </section>
+
+        <!-- HIGH SCORE STRIP -->
+        <section class="score-strip">
+          <div class="pixel-frame"><div class="pixel-inner score-card">
+            <strong>128</strong><span>players on your net</span>
+          </div></div>
+          <div class="pixel-frame"><div class="pixel-inner score-card">
+            <strong>14</strong><span>rooms open now</span>
+          </div></div>
+          <div class="pixel-frame"><div class="pixel-inner score-card">
+            <strong>06</strong><span>clubs on campus</span>
+          </div></div>
+          <div class="pixel-frame"><div class="pixel-inner score-card">
+            <strong>12</strong><span>games represented</span>
+          </div></div>
+        </section>
+
+        <!-- PLAYERS PREVIEW -->
+        <section class="section">
+          <div class="preview-head">
+            <h2>WHO'S ONLINE NEAR YOU</h2>
+            <a class="view-all" href="players.html">VIEW ALL &rarr;</a>
+          </div>
+          <div class="teaser-grid" id="player-preview"></div>
+        </section>
+
+        <!-- ROOMS PREVIEW -->
+        <section class="section">
+          <div class="preview-head">
+            <h2>TEMPORARY ROOMS</h2>
+            <a class="view-all" href="rooms.html">VIEW ALL &rarr;</a>
+          </div>
+          <p class="section-sub">Rooms expire on their own &mdash; perfect for a quick match tonight, no long-term commitment.</p>
+          <div class="teaser-grid" id="room-preview"></div>
+        </section>
+
+        <!-- CLUBS PREVIEW -->
+        <section class="section">
+          <div class="preview-head">
+            <h2>CLUBS ON CAMPUS</h2>
+            <a class="view-all" href="clubs.html">VIEW ALL &rarr;</a>
+          </div>
+          <div class="teaser-grid" id="club-preview"></div>
+        </section>
+
+        <!-- GAMES + STORE PREVIEW -->
+        <section class="section">
+          <div class="grid-2">
+            <div class="pixel-frame green"><div class="pixel-inner teaser-card">
+              <span class="tag">OFFLINE ARCADE</span>
+              <h3>No wifi? No squad? Still no problem.</h3>
+              <p>Three pixel-perfect games you can play solo right in your browser &mdash; then flip them online in one tap when your squad logs on.</p>
+              <a class="btn-pixel outline small" href="games.html">PLAY OFFLINE GAMES</a>
+            </div></div>
+            <div class="pixel-frame pink"><div class="pixel-inner teaser-card">
+              <span class="tag" style="color:var(--pink)">ARCADE STORE</span>
+              <h3>Spend your coins on something silly.</h3>
+              <p>Avatar frames, chat colors and title tags &mdash; earned on QUADCADE, spent on QUADCADE. No real money involved, promise.</p>
+              <a class="btn-pixel outline small" href="store.html">OPEN THE STORE</a>
+            </div></div>
+          </div>
+        </section>
+
+        <!-- LOBBY CHAT -->
+        <section class="section" id="lobby">
+          <div class="section-head">
+            <h2>THE LOBBY</h2>
+            <span class="online-pill"><i></i> 84 online now</span>
+          </div>
+          <div class="pixel-frame">
+            <div class="pixel-inner chat-panel">
+              <div class="messages" id="messages">
+                <p><b>arjun.exe</b><span>anyone up for a BGMI custom after mess dinner?</span></p>
+                <p><b>meher_04</b><span>count me in, hostel B lobby has better ping lol</span></p>
+                <p><b>kabir.gg</b><span>Ludo King room is still open if 2 of you get bored waiting 👀</span></p>
+              </div>
+              <form id="chat-form">
+                <input id="chat-input" placeholder="say something to the lobby..." autocomplete="off" />
+                <button type="submit">SEND</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer-title">GAME OVER? <span class="gold">INSERT COIN TO CONTINUE.</span></p>
+        <p class="footer-sub">QUADCADE runs entirely over your hostel/college network. No off-campus strangers, just the people already around you.</p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="storage.js"></script>
+    <script src="data.js"></script>
+    <script src="audio.js"></script>
+    <script src="common.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>
